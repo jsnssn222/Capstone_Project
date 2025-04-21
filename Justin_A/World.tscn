@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://goal.tscn" type="PackedScene" id=1]
+[ext_resource path="res://ball.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Lebron.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Naruto.tscn" type="PackedScene" id=4]
+[ext_resource path="res://goal2.tscn" type="PackedScene" id=5]
+
+[node name="World" type="Node2D"]
+
+[node name="Player_spawner" type="Node2D" parent="."]
+
+[node name="LebronJames" parent="Player_spawner" instance=ExtResource( 3 )]
+position = Vector2( 373, 3 )
+
+[node name="Naruto" parent="Player_spawner" instance=ExtResource( 4 )]
+position = Vector2( -247, 11 )
+
+[node name="graphics" type="Node2D" parent="."]
+
+[node name="Goal" parent="graphics" instance=ExtResource( 1 )]
+position = Vector2( -496, -54 )
+
+[node name="Node2D2" parent="graphics" instance=ExtResource( 5 )]
+position = Vector2( 682, -137 )
+
+[node name="Sprite" parent="graphics/Node2D2" index="1"]
+position = Vector2( 328, 281 )
+
+[node name="Download(1)" parent="graphics/Node2D2" index="2"]
+position = Vector2( 60, 130 )
+scale = Vector2( -0.891448, 1.14685 )
+
+[node name="Ball_spawner" type="Node2D" parent="."]
+position = Vector2( -1, 4 )
+
+[node name="Node2D" parent="Ball_spawner" instance=ExtResource( 2 )]
+position = Vector2( -494, -160 )
+
+[editable path="graphics/Node2D2"]
